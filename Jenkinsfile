@@ -1,12 +1,12 @@
 pipeline {
     agent { docker { 
-                image 'maven:amazoncorretto-17-windowsservercore' 
+                image 'maven:3.9.9-eclipse-temurin-21-alpine' 
                 } 
           }
     stages {
         stage('build') {
             steps {
-                bat 'mvn --version'
+                sh 'mvn --version'
             }
         }
     }
